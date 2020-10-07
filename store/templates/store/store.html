@@ -1,0 +1,63 @@
+{% extends 'store/main.html' %}
+{% load static %}
+{% block content %}
+	<div class="grid-container">
+		{% for product in products %}
+		<div class="grid-item">
+			<img class="thumbnail" src="{{product.imageURL}}">
+			<div class="box-element">
+				<h6><strong>{{product.name}}</strong></h6>
+				<hr>
+
+				<button class="btn btn-outline-secondary" data-toggle="modal" data-target="#myModal{{product.id}}">Naručite</button>
+
+				<!-- Modal -->
+				<div class="modal fade" id="myModal{{product.id}}" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+					<div class="modal-dialog" id="{{product.id}}" >
+						<div class="modal-content" >
+
+						<div class="modal-header">
+						<h4 class="modal-title">{{product.name}}</h4>
+						<button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+						</div>
+
+						<div class="modal-body">
+							<div>
+								{% for item in product.variation_set.sizes %}
+								<h6>{{item.size}}: {{item.price}} KM</h6>
+								<br>
+								{% endfor %}
+							</div>
+							{% if product.variation_set.all %}
+							{% if product.variation_set.sizes %}
+
+							<select class="selectBox" onchange="getSize(this)">
+								<option value="select">Porcija</option>
+								{% for item in product.variation_set.sizes %}
+								<option value="{{ item.id|lower }}">{{ item.size|capfirst }}</option>
+								{% endfor %}
+							</select>
+							{% endif %}
+							{% endif %}
+						</div>
+
+						<div class="modal-footer">
+						<button data-product="{{product.id}}" data-action="add" class="btn btn-outline-secondary add-btn update-cart">Naručite</button>
+						</div>
+					</div>
+				</div>
+				</div>
+
+			</div>
+		</div>
+		{% endfor %}
+	</div>
+	{% if user.is_authenticated %}
+		<div>
+			<a href="{% url 'cart' %}">
+			<img  id="cart-icon" src="{% static 'images/cart.png' %}">
+			</a>
+			<p id="cart-total">{{cartItems}}</p>
+		</div>
+	{% endif %}
+{% endblock content %}

@@ -1,0 +1,11 @@
+{% extends 'store/main.html' %}
+{% block content %}
+<br>
+    <h2 class="register">Uspješno ste se izlogovali</h2>
+
+    <div class="border-top pt-3 register">
+        <small class="text-muted">
+            <a href="{% url 'login' %}" class="btn btn-outline-dark">Prijavite se</a>
+        </small>
+    </div>
+{% endblock content %}

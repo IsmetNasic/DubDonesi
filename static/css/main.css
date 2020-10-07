@@ -1,0 +1,290 @@
+body{
+	background-color: #EAE9ED;
+}
+
+h1,h2,h3,h4,h5,h6{
+	color:hsl(0, 0%, 30%);
+}
+
+/* -----------------------------------------------Background image main------------------------------------- */
+.pizzaImg{
+    background-image: url("/static/images/pexel.jpg");
+    max-width: auto;
+    height: auto;
+    background-position: 0% 15%;
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: relative;
+}
+
+/* ------------------------------------------------------------------------------------ */
+
+.btn{
+	border-radius: 5;
+}
+/*--------------------------------------- Checkout -------------------------------------------------*/
+.row-image{
+	width: 100px;
+}
+
+.form-field{
+	width:250px;
+	display: inline-block;
+	padding: 5px;
+}
+
+/* -------------------------------------- Store Cart ------------------------------------------------- */
+.cart-row{
+	display: flex;
+    align-items: flex-stretch;
+    padding-bottom: 10px;
+    margin-bottom: 10px;
+    border-bottom: 1px solid #ececec;
+
+}
+
+#cart-icon{
+	width:50px;
+    position: fixed;
+    right:270px;
+    top:8px;
+}
+
+#cart-total{
+	display: block;
+	text-align: center;
+	color: black;
+	background-color:#FFBC42;
+	width: 25px;
+	height: 25px;
+	border-radius: 100%;
+
+	font-size: 16px;
+	font-weight: 700;
+	position: fixed;
+    right: 260px;
+    top: 0px;
+}
+/* --------------------------------------  ------------------------------------------------- */
+
+.quantity{
+	display: inline-block;
+	font-weight: 700;
+	padding-right:10px;
+	
+
+}
+
+.chg-quantity{
+	width: 12px;
+	cursor: pointer;
+	display: block;
+	margin-top: 5px;
+	transition:.1s;
+}
+
+.chg-quantity:hover{
+	opacity: .6;
+}
+
+
+.hidden{
+	display: none!important;
+}
+
+
+ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 1;
+  overflow: hidden;
+}
+
+li {
+  float: left;
+}
+
+li a {
+  display: block;
+  color: white;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+}
+
+li a:hover{
+  background-color: #111;
+  text-decoration: none;
+  background-color: #ffd78f;
+  color: #211A1E;
+}
+
+.active {
+    background-color: #FFB627;
+    border-radius: 20px 2px 20px 2px;
+    color: #211A1E;
+    font-weight: 650;
+    font-size: 18px;
+    position: fixed;
+    right: 5%;
+    top: 5px;
+}
+
+.activeDub {
+    background-color: #FFB627;
+    border-radius: 20px 2px 20px 2px;
+    color: #211A1E;
+    font-weight: 650;
+    font-size: 18px;
+    position: fixed;
+    left: 5%;
+    top: 5px;
+}
+
+.register{
+    background-color: #EEF1EF;
+    border-radius: 10px;
+    font-weight: 500;
+    padding: 10px;
+    border: solid #FFBC42 2px;
+}
+
+.container{
+    margin-left: auto;
+    margin-top: auto;
+}
+
+/* --------------------------------------------Store Product Display--------------------------------------- */
+.grid-container {
+    display: grid;
+    grid-template-columns: min(400px) min(400px) min(400px) min(400px);
+    padding: 0px;
+    justify-content: center;
+}
+
+.grid-item {
+    padding: 3px;
+    font-size: 12px;
+    text-align: center;
+}
+
+.box-element{
+	box-shadow:hsl(0, 0%, 80%) 0 0 16px;
+	background-color: #E0E1E0;
+	border-radius: 4px;
+	padding: 5px;
+	border: solid #FFBC42 1px;
+	border-radius: 0px 0px 15px 15px;
+	margin: auto;
+}
+
+.thumbnail{
+	width: 100%;
+	height: 200px;
+	border-radius: 10px 10px 0 0;
+	-webkit-box-shadow: -1px -3px 5px -2px rgba(214,214,214,1);
+    -moz-box-shadow: -1px -3px 5px -2px rgba(214,214,214,1);
+    box-shadow: -1px -3px 5px -2px rgba(214,214,214,1);
+    margin-top: 25px;
+}
+
+/* --------------------------------------------Modal----------------------------------------------- */
+.modal-content{
+    background-color: #EAE9ED;
+    border: solid #FFBC42 3px;
+}
+.modal-content h4{
+    font-weight: 750;
+}
+.modal-body h6{
+    background-color: #FFC865
+}
+.selectBox{
+    width: 40%;
+    min-width: 15ch;
+    max-width: 30ch;
+    border: 1px solid black;
+    border-radius: 0.25em;
+    padding: 0.25em 0.5em;
+    font-size: 1.25rem;
+    cursor: pointer;
+
+}
+
+/* --------------------------------------------Media Queries----------------------------------------------- */
+@media(max-width: 1600px){
+    .grid-container {
+        display: grid;
+        grid-template-columns: min(300px) min(300px) min(300px) min(300px);
+        justify-content: center;
+    }
+    .thumbnail{
+        height: 150px;
+    }
+}
+
+@media(max-width: 1200px){
+    .grid-container {
+        display: grid;
+        grid-template-columns: min(250px) min(250px) min(250px);
+        justify-content: center;
+    }
+    .thumbnail{
+        height: 125px;
+    }
+}
+
+@media(max-width: 768px){
+    .grid-container {
+        display: grid;
+        grid-template-columns: min(250px) min(250px);
+        justify-content: center;
+    }
+    .thumbnail{
+        height: 125px;
+    }
+}
+
+@media(max-width: 500px){
+    .grid-container {
+        display: grid;
+        grid-template-columns: min(180px) min(180px);
+        justify-content: center;
+    }
+    .thumbnail{
+        height: 90px;
+        border-radius: 5px 5px 0 0;
+    }
+    .box-element{
+        border-radius: 0px 0px 5px 5px;
+        padding: 2px;
+        height: 100px;
+    }
+    #cart-icon{
+        width:50px;
+        right:145px;
+    }
+    #cart-total{
+        width: 25px;
+        height: 25px;
+        right: 135px;
+    }
+    .active {
+        font-size: 16px;
+        right: 2%;
+    }
+
+    .activeDub {
+        font-size: 16px;
+        left: 2%;
+    }
+    #proizvodi{
+        display: none;
+    }
+     #kolicina{
+        display: none;
+    }
+    .reglogin{
+        padding-bottom: 70px;
+    }
+}

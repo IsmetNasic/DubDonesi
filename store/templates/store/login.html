@@ -1,0 +1,25 @@
+{% extends 'store/main.html' %}
+{% load crispy_forms_tags %}
+{% block content %}
+    <br>
+    <div class="content-section register reglogin">
+        <form method="POST">
+            {% csrf_token %}
+            <fieldset class="form-group">
+                <legend class="border-bottom mb-4">Prijavite se</legend>
+                {{ form|crispy }}
+            </fieldset>
+            <div class="form-group">
+                <button class="btn btn-outline-info" type="submit">Prijavite se</button>
+
+            <div class="border-top pt-3" style="float:right;">
+                <p class="text-muted">
+                Želite napraviti novi profil? <a class="btn btn-outline-dark" href="{% url 'register' %}">Registrujte se</a>
+                </p>
+            </div>
+
+            </div>
+
+        </form>
+    </div>
+{% endblock content %}

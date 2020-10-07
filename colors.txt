@@ -1,0 +1,4 @@
+background: EAE9ED (ultra light lavender)
+box-color: E0E1E0 ( light gray)
+box-border & navigation & cart-total: FFBC42(orange)
+modal text-background:  FFC865  (light orange)
