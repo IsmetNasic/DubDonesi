@@ -14,7 +14,7 @@ class Customer(models.Model):
 class Product(models.Model):
 	name = models.CharField(max_length=200)
 	price = models.FloatField()
-	inStock = models.BooleanField(default=True)
+	inStock = models.BooleanField(default=True, null=True, blank=True)
 	image = models.ImageField(null=True, blank=True)
 
 	def __str__(self):
