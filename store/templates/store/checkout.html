@@ -17,38 +17,38 @@
 
 					<div id="shipping-info">
 						<hr>
-						<p>Informacije za dostavu:</p>
+						<p>Delivery information:</p>
 						<hr>
 						<div class="form-field">
-							<input class="form-control" type="text" name="address" placeholder="Adresa..">
+							<input class="form-control" type="text" name="address" placeholder="Address..">
 						</div>
 						<div class="form-field">
-							<input class="form-control" type="text" name="phone" placeholder="Telefon..">
+							<input class="form-control" type="text" name="phone" placeholder="Phone..">
 						</div>
 					</div>
 
 					<hr>
-					<input id="form-button" class="btn btn-success btn-block" type="submit" value="Nastavite">
+					<input id="form-button" class="btn btn-success btn-block" type="submit" value="Continue">
 				</form>
 			</div>
 		</div>
 
 		<div class="col-lg-6">
 			<div class="register">
-				<a  class="btn btn-outline-dark" href="{% url 'cart' %}">&#x2190; Nazad</a>
+				<a  class="btn btn-outline-dark" href="{% url 'cart' %}">&#x2190; Back</a>
 				<hr>
-				<h3>Pregled narudžbe</h3>
+				<h3>Order overview</h3>
 				<hr>
 				{% for item in items %}
 				<div class="cart-row">
 					<div style="flex:2"><img class="row-image" src="{{item.product.imageURL}}"></div>
 					<div style="flex:2"><p>{{item.product.name}}</p></div>
-					<div style="flex:1"><p>{{item.product.price|floatformat:2}} KM</p></div>
+					<div style="flex:1"><p>$ {{item.product.price|floatformat:2}}</p></div>
 					<div style="flex:1"><p>x{{item.quantity}}</p></div>
 				</div>
 				{% endfor %}
-				<h5>Proizvodi:   {{order.get_cart_items}}</h5>
-				<h5>Cijena:   {{order.get_cart_total|floatformat:2}} KM</h5>
+				<h5>Items:   {{order.get_cart_items}}</h5>
+				<h5>Price:   $ {{order.get_cart_total|floatformat:2}}</h5>
 			</div>
 		</div>
 	</div>

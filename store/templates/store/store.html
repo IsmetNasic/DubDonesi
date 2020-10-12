@@ -9,7 +9,7 @@
 				<h6><strong>{{product.name}}</strong></h6>
 				<hr>
 
-				<button class="btn btn-outline-secondary" data-toggle="modal" data-target="#myModal{{product.id}}">Naručite</button>
+				<button class="btn btn-outline-secondary" data-toggle="modal" data-target="#myModal{{product.id}}">Order</button>
 
 				<!-- Modal -->
 				<div class="modal fade" id="myModal{{product.id}}" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
@@ -24,7 +24,7 @@
 						<div class="modal-body">
 							<div>
 								{% for item in product.variation_set.sizes %}
-								<h6>{{item.size}}: {{item.price}} KM</h6>
+								<h6>{{item.size}}: $ {{item.price}}</h6>
 								<br>
 								{% endfor %}
 							</div>
@@ -32,7 +32,7 @@
 							{% if product.variation_set.sizes %}
 
 							<select class="selectBox" onchange="getSize(this)">
-								<option value="select">Porcija</option>
+								<option value="select">Size</option>
 								{% for item in product.variation_set.sizes %}
 								<option value="{{ item.id|lower }}">{{ item.size|capfirst }}</option>
 								{% endfor %}
@@ -42,7 +42,7 @@
 						</div>
 
 						<div class="modal-footer">
-						<button data-product="{{product.id}}" data-action="add" class="btn btn-outline-secondary add-btn update-cart">Naručite</button>
+						<button data-product="{{product.id}}" data-action="add" class="btn btn-outline-secondary add-btn update-cart">Order</button>
 						</div>
 					</div>
 				</div>
