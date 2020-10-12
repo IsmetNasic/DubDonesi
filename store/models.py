@@ -3,7 +3,7 @@ from django.contrib.auth.models import User
 
 
 class Customer(models.Model):
-	user = models.ManyToManyField(User, null=True, blank=True, on_delete=models.CASCADE)
+	user = models.OneToOneField(User, null=True, blank=True, on_delete=models.CASCADE)
 	name = models.CharField(max_length=200, null=True)
 	email = models.CharField(max_length=200)
 
