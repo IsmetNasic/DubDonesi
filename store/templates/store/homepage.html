@@ -1,0 +1,54 @@
+{% extends 'store/main.html' %}
+{% load static %}
+{% block content %}
+<head>
+    <link rel="stylesheet" href="/static/css/title.css">
+    <style>
+        .pizzaImg {
+        height: 100vh;
+        }
+</style>
+</head>
+<div class="title-container">
+    <div class="home-box">
+
+        <div class="title">
+            <span class="block"></span>
+            <h1 class="title-text">Zeit, Essen zu bestellen<span></span></h1>
+        </div>
+    </div>
+</div>
+
+<h1 class="cards-title">So einfach geht es!</h1>
+<div class="home-card-container">
+    <div class="home-card">
+        <img src="/static/images/card-account.png" alt="Account Erstellen">
+        <h5>Account Erstellen</h5>
+        <p>Erstelle deinen Account!</p>
+    </div>
+    <div class="home-card">
+        <img src="/static/images/card-food.png" alt="Bestellen!">
+        <h5>Speisen auf DubDonesi auswählen</h5>
+        <p>Was trifft Deinen Geschmack? Klicke Dich durch zahlreiche Menüs.</p>
+    </div>
+    <div class="home-card">
+        <img src="/static/images/card-car.png" alt="Wir Liefern!">
+        <h5>Liefern lassen</h5>
+        <p>Wir wünschen guten Appetit!</p>
+    </div>
+</div>
+
+<footer>
+    <div class="follow-us">
+        <p>FOLLOW US</p>
+        <img src="/static/images/facebook.svg" alt="Facebook">
+        <img src="/static/images/instagram.svg" alt="Instagram">
+        <img src="/static/images/twitter.svg" alt="Twitter">
+    </div>
+    <p>2020 DUBDONESI. ALL RIGHTS RESERVED. DESIGN BY ISMET NASIĆ &copy;</p>
+</footer>
+
+
+
+
+{% endblock content %}
